@@ -10,6 +10,8 @@ HAR 的图片页（如 `https://www.himalayanart.org/items/36419/images/primary`
 
 ## 安装 Install
 
+### ZCode
+
 克隆到用户级技能目录即可被 ZCode 发现：
 
 ```bash
@@ -19,6 +21,28 @@ git clone https://github.com/booker1978/himalayanart-hires.git \
 
 Windows 下即 `C:\Users\<你>\.agents\skills\himalayanart-hires`。
 也可以放进项目的 `.zcode/skills/` 或 `.agents/skills/`（仅当前项目可用）。
+
+### Claude Code
+
+SKILL.md 采用开放的 Agent Skills 规范，Claude Code 原生兼容：
+
+```bash
+git clone https://github.com/booker1978/himalayanart-hires.git \
+  ~/.claude/skills/himalayanart-hires
+```
+
+### 其他 Agent / 终端直用
+
+本技能本质是「一份 markdown 指令文档 + 一个独立 CLI 脚本」，不绑定任何工具：
+
+- **有技能机制的 agent**：把仓库克隆进它的技能目录即可；
+- **没有技能机制的 agent**（Grok CLI、Gemini CLI 或各类自研 agent）：把 SKILL.md 作为指令文档喂给它，或让它直接调脚本；
+- **纯终端手动使用**：
+
+```bash
+python -I scripts/fetch_har_image.py 65088
+python -I scripts/fetch_har_image.py "https://www.himalayanart.org/items/36419/images/primary"
+```
 
 依赖 Dependencies：Python 3 + [Pillow](https://python-pillow.org)（仅拼合用），其余全部为标准库。
 
