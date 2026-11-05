@@ -1,6 +1,6 @@
 # himalayanart-hires
 
-一个 [ZCode](https://zcode.ai) 技能：把 [www.himalayanart.org](https://www.himalayanart.org)（HAR，喜马拉雅艺术资源库）上的**缩放查看器图片以原生最高分辨率整图下载**下来——自动抓取瓦片金字塔并无缝拼合成一张高清大图。
+一个**通用 Agent 技能 + 独立命令行工具**：把 [www.himalayanart.org](https://www.himalayanart.org)（HAR，喜马拉雅艺术资源库）上的**缩放查看器图片以原生最高分辨率整图下载**下来——自动抓取瓦片金字塔并无缝拼合成一张高清大图。兼容任何支持 Agent Skills 规范的工具（ZCode、Claude Code 等），无技能机制的 agent 或纯终端环境亦可直接调用。
 
 A ZCode skill that downloads any zoomable image from Himalayan Art Resources at its full native resolution by fetching the site's tile pyramid and stitching it into a single high-resolution JPEG.
 
