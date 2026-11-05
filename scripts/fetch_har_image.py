@@ -166,7 +166,8 @@ def main():
 
     meta_bytes = fetcher.get(base + "/metadata.json")
     meta = json.loads(meta_bytes)
-    width, height, max_zoom = meta["width"], meta["height"], meta["maxZoom"]
+    width, height, max_zoom = (int(meta["width"]), int(meta["height"]),
+                               int(meta["maxZoom"]))
     top = max_zoom - 1  # viewer uses mapMaxZoom = maxZoom - 1 (0-based)
     cols = math.ceil(width / TILE_SIZE)
     rows = math.ceil(height / TILE_SIZE)
